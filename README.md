@@ -1,2 +1,3 @@
-# sc-testing-tools-skill-test
-play-ground
+# pingpong
+
+Minimal PingPong showcase.
