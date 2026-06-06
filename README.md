@@ -1,3 +1,3 @@
-# pingpong
+# auction
 
-Minimal PingPong showcase.
+Minimal Auction showcase.

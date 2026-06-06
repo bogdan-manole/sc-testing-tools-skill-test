@@ -1,5 +1,5 @@
 {
-  description = "pingpong-showcase";
+  description = "auction-showcase";
 
   inputs = {
 

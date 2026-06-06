@@ -6,7 +6,7 @@ let
     { config, pkgs, ... }:
 
     {
-      name = "pingpong";
+      name = "auction";
 
       compiler-nix-name = lib.mkDefault "ghc966";
 
