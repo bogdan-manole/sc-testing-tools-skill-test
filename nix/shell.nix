@@ -44,7 +44,7 @@ let
   ];
 
   shell = project.shellFor {
-    name = "pingpong-${project.args.compiler-nix-name}";
+    name = "vesting-${project.args.compiler-nix-name}";
 
     buildInputs = commonPkgs;
 
@@ -52,7 +52,7 @@ let
 
     shellHook = ''
       ${preCommitCheck.shellHook}
-      export PS1="\n\[\033[1;32m\][pingpong-shell:\w]\$\[\033[0m\] "
+      export PS1="\n\[\033[1;32m\][vesting-shell:\w]\$\[\033[0m\] "
     '';
   };
 

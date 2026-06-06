@@ -1,3 +1,3 @@
-# pingpong
+# vesting
 
-Minimal PingPong showcase.
+Minimal Vesting showcase.

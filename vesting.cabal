@@ -1,7 +1,7 @@
 cabal-version: 3.0
-name:          pingpong
+name:          vesting
 version:       0.1.0.0
-synopsis:      Minimal PingPong showcase
+synopsis:      Minimal Vesting showcase
 license:       Apache-2.0
 build-type:    Simple
 
@@ -18,8 +18,11 @@ common lang
     GeneralizedNewtypeDeriving
     ImportQualifiedPost
     MultiParamTypeClasses
+    NumericUnderscores
+    OverloadedStrings
     ScopedTypeVariables
     StandaloneDeriving
+    TemplateHaskell
 
   ghc-options:
     -Wall -Wnoncanonical-monad-instances -Wunused-packages
@@ -30,8 +33,8 @@ library
   import:          lang
   hs-source-dirs:  lib
   exposed-modules:
-    Scripts
-    Scripts.PingPong
+    Vesting.Scripts
+    Vesting.Validator
 
   -- Plutus options for the on-chain module live as per-module pragmas inside the .hs files
   ghc-options:
@@ -41,13 +44,9 @@ library
     PlutusTx.Plugin:defer-errors
 
   build-depends:
-    , base                   >=4.14.0
-    , bytestring
+    , base               >=4.14.0
     , cardano-api
     , convex-base
-    , convex-coin-selection
-    , convex-mockchain
-    , convex-wallet
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
