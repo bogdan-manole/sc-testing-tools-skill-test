@@ -1,7 +1,7 @@
 cabal-version: 3.0
-name:          pingpong
+name:          escrow
 version:       0.1.0.0
-synopsis:      Minimal PingPong showcase
+synopsis:      Minimal Escrow showcase
 license:       Apache-2.0
 build-type:    Simple
 
@@ -30,8 +30,8 @@ library
   import:          lang
   hs-source-dirs:  lib
   exposed-modules:
-    Scripts
-    Scripts.PingPong
+    Escrow.Scripts
+    Escrow.Validator
 
   -- Plutus options for the on-chain module live as per-module pragmas inside the .hs files
   ghc-options:
@@ -41,13 +41,9 @@ library
     PlutusTx.Plugin:defer-errors
 
   build-depends:
-    , base                   >=4.14.0
-    , bytestring
+    , base               >=4.14.0
     , cardano-api
     , convex-base
-    , convex-coin-selection
-    , convex-mockchain
-    , convex-wallet
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin

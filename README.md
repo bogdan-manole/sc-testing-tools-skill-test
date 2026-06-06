@@ -1,3 +1,3 @@
-# pingpong
+# escrow
 
-Minimal PingPong showcase.
+Minimal Escrow showcase.
