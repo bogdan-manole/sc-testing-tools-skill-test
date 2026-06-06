@@ -34,6 +34,7 @@ library
   hs-source-dirs:  lib
   exposed-modules:
     Auction.Scripts
+    Auction.Utils
     Auction.Validator
 
   -- Plutus options for the on-chain module live as per-module pragmas inside the .hs files
@@ -44,9 +45,13 @@ library
     PlutusTx.Plugin:defer-errors
 
   build-depends:
-    , base               >=4.14.0
+    , base                    >=4.14.0
     , cardano-api
+    , cardano-ledger-shelley
     , convex-base
+    , convex-coin-selection
+    , convex-mockchain
+    , convex-wallet
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
