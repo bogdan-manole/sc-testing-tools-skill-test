@@ -39,3 +39,13 @@ source-repository-package
     src/node-client
     src/optics
     src/wallet
+
+-- Upstream sc-testing-tools: convex-tasty-streaming, convex-testing-interface
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/sc-testing-tools.git
+  tag: 017066310f1f5387ec2c7848a50dac8da0de291f
+  --sha256: sha256-dz9ksg9Mv3QOoPzclnWf7CUh1+hagRNjjFkVjK67YPg=
+  subdir:
+    src/tasty-streaming
+    src/testing-interface

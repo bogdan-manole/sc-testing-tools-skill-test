@@ -5,3 +5,9 @@ result-*
 *.hi
 *.o
 .pre-commit-config.yaml
+
+# testing-interface skill notepad protocol
+.skill-state.md
+contract-sketch.md
+model-decisions.md
+SESSION.md

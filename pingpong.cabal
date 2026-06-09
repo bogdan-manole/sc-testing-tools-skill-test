@@ -51,3 +51,35 @@ library
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
+
+test-suite pingpong-test
+  import:         lang
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        Spec.hs
+  other-modules:  PingPongSpec
+  ghc-options:
+    -Wall -fobject-code -fno-ignore-interface-pragmas
+    -fno-omit-interface-pragmas -fno-specialise -Wno-unused-packages
+
+  build-depends:
+    , aeson
+    , base
+    , cardano-api
+    , cardano-ledger-conway
+    , containers
+    , convex-base
+    , convex-coin-selection
+    , convex-mockchain
+    , convex-tasty-streaming
+    , convex-testing-interface
+    , convex-wallet
+    , lens
+    , mtl
+    , pingpong
+    , plutus-ledger-api
+    , plutus-tx
+    , QuickCheck
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
