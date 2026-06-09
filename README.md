@@ -10,10 +10,10 @@ This repo records four contract trials (PingPong, Escrow, Auction, Vesting). **T
 
 | Contract | Report                                                                                                                |
 | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| PingPong | https://github.com/bogdan-manole/sc-testing-tools-skill-test/blob/ping-pong/with-offchain-testing-interface/README.md |
-| Escrow   | https://github.com/bogdan-manole/sc-testing-tools-skill-test/blob/escrow/with-offchain-testing-interface/README.md    |
-| Auction  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/blob/auction/with-offchain-testing-interface/README.md   |
-| Vesting  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/blob/vesting/with-offchain-testing-interface/README.md   |
+| PingPong | https://github.com/input-output-hk/sc-testing-tools-skill-test/blob/ping-pong/with-offchain-testing-interface/README.md |
+| Escrow   | https://github.com/input-output-hk/sc-testing-tools-skill-test/blob/escrow/with-offchain-testing-interface/README.md    |
+| Auction  | https://github.com/input-output-hk/sc-testing-tools-skill-test/blob/auction/with-offchain-testing-interface/README.md   |
+| Vesting  | https://github.com/input-output-hk/sc-testing-tools-skill-test/blob/vesting/with-offchain-testing-interface/README.md   |
 
 ---
 
@@ -70,40 +70,40 @@ The prompt given to the agent for every trial was:
 ### PingPong
 | Stage     | Branch                                                                                                      | What it adds        |
 | --------- | ----------------------------------------------------------------------------------------------------------- | ------------------- |
-| naked     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/ping-pong/naked                           | validator + scripts |
-| offchain  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/ping-pong/with-offchain                   | off-chain helpers   |
-| skill-pin | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/ping-pong/with-offchain-skill             | skill copy pinned   |
-| final     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/ping-pong/with-offchain-testing-interface | TestingInterface    |
+| naked     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/ping-pong/naked                           | validator + scripts |
+| offchain  | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/ping-pong/with-offchain                   | off-chain helpers   |
+| skill-pin | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/ping-pong/with-offchain-skill             | skill copy pinned   |
+| final     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/ping-pong/with-offchain-testing-interface | TestingInterface    |
 
 Skill pointed at: `chore/without-p` of `input-output-hk/sc-testing-tools` (PingPong stripped).
 
 ### Escrow
 | Stage     | Branch                                                                                                   | What it adds        |
 | --------- | -------------------------------------------------------------------------------------------------------- | ------------------- |
-| naked     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/escrow/naked                           | validator + scripts |
-| offchain  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/escrow/with-offchain                   | off-chain helpers   |
-| skill-pin | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/escrow/with-offchain-skill             | skill copy pinned   |
-| final     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/escrow/with-offchain-testing-interface | TestingInterface    |
+| naked     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/escrow/naked                           | validator + scripts |
+| offchain  | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/escrow/with-offchain                   | off-chain helpers   |
+| skill-pin | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/escrow/with-offchain-skill             | skill copy pinned   |
+| final     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/escrow/with-offchain-testing-interface | TestingInterface    |
 
 Skill pointed at: `chore/without-e` (Escrow stripped).
 
 ### Auction
 | Stage     | Branch                                                                                                    | What it adds        |
 | --------- | --------------------------------------------------------------------------------------------------------- | ------------------- |
-| naked     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/auction/naked                           | validator + scripts |
-| offchain  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/auction/with-offchain                   | off-chain helpers   |
-| skill-pin | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/auction/with-offchain-skill             | skill copy pinned   |
-| final     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/auction/with-offchain-testing-interface | TestingInterface    |
+| naked     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/auction/naked                           | validator + scripts |
+| offchain  | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/auction/with-offchain                   | off-chain helpers   |
+| skill-pin | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/auction/with-offchain-skill             | skill copy pinned   |
+| final     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/auction/with-offchain-testing-interface | TestingInterface    |
 
 Skill pointed at: `chore/without-a` (Auction stripped).
 
 ### Vesting
 | Stage     | Branch                                                                                                    | What it adds        |
 | --------- | --------------------------------------------------------------------------------------------------------- | ------------------- |
-| naked     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/vesting/naked                           | validator + scripts |
-| offchain  | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/vesting/with-offchain                   | off-chain helpers   |
-| skill-pin | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/vesting/with-offchain-skill             | skill copy pinned   |
-| final     | https://github.com/bogdan-manole/sc-testing-tools-skill-test/tree/vesting/with-offchain-testing-interface | TestingInterface    |
+| naked     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/vesting/naked                           | validator + scripts |
+| offchain  | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/vesting/with-offchain                   | off-chain helpers   |
+| skill-pin | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/vesting/with-offchain-skill             | skill copy pinned   |
+| final     | https://github.com/input-output-hk/sc-testing-tools-skill-test/tree/vesting/with-offchain-testing-interface | TestingInterface    |
 
 Skill pointed at: `chore/without-v` (Vesting stripped).
 
@@ -127,7 +127,7 @@ Same skill, different source pin per contract.
 This trial is a control measure, not a recipe. An agent rerun will not produce the same output — LLM nondeterminism guarantees that. What you can do is start from the **skill-pin branch** (which holds the exact skill copy that was used) and run your own agent against it. Then compare your result against the corresponding final branch and its report to see whether the skill led you down a similar path.
 
 ```bash
-git clone https://github.com/bogdan-manole/sc-testing-tools-skill-test
+git clone https://github.com/input-output-hk/sc-testing-tools-skill-test
 cd sc-testing-tools-skill-test
 git checkout <contract>/with-offchain-skill
 NIX_CONFIG="system = x86_64-linux" nix develop -c cabal build all
@@ -148,7 +148,7 @@ Compare your agent's output against the corresponding `with-offchain-testing-int
 If you just want to see what the agent produced — build the suite on the final branch and run the property tests.
 
 ```bash
-git clone https://github.com/bogdan-manole/sc-testing-tools-skill-test
+git clone https://github.com/input-output-hk/sc-testing-tools-skill-test
 cd sc-testing-tools-skill-test
 git checkout <contract>/with-offchain-testing-interface
 NIX_CONFIG="system = x86_64-linux" nix develop -c cabal build all
