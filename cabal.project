@@ -39,3 +39,12 @@ source-repository-package
     src/node-client
     src/optics
     src/wallet
+
+-- sc-testing-tools: testing interface framework
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/sc-testing-tools.git
+  tag: 017066310f1f5387ec2c7848a50dac8da0de291f
+  subdir:
+    src/tasty-streaming
+    src/testing-interface

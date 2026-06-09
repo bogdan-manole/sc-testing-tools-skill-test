@@ -17,6 +17,11 @@ module Escrow.Scripts (
   lockEscrow,
   redeemEscrow,
   refundEscrow,
+
+  -- * Off-chain helpers (pre-compiled script variants)
+  lockEscrowWith,
+  redeemEscrowWith,
+  refundEscrowWith,
 ) where
 
 import Cardano.Api (NetworkId)
@@ -76,8 +81,26 @@ lockEscrow
   -> C.Value
   -- ^ Value to lock
   -> m ()
-lockEscrow networkId params contributorPkh value = do
-  let scriptHash = C.hashScript (C.PlutusScript C.plutusScriptVersion (escrowValidatorScript params))
+lockEscrow networkId params =
+  lockEscrowWith networkId (escrowValidatorScript params)
+
+{- | Like 'lockEscrow' but takes a pre-compiled script, avoiding repeated
+PlutusTx compilation when the same params are used across many iterations.
+-}
+lockEscrowWith
+  :: forall era m
+   . (C.IsBabbageBasedEra era)
+  => (MonadBuildTx era m)
+  => NetworkId
+  -> C.PlutusScript C.PlutusScriptV3
+  -- ^ Pre-compiled validator script
+  -> PubKeyHash
+  -- ^ Contributor PKH — stored as inline datum on the script UTxO
+  -> C.Value
+  -- ^ Value to lock
+  -> m ()
+lockEscrowWith networkId script contributorPkh value = do
+  let scriptHash = C.hashScript (C.PlutusScript C.plutusScriptVersion script)
   BuildTx.payToScriptInlineDatum
     networkId
     scriptHash
@@ -99,8 +122,22 @@ redeemEscrow
   -> C.TxIn
   -- ^ The escrow UTxO to spend
   -> m ()
-redeemEscrow params txIn =
-  BuildTx.spendPlutusInlineDatum txIn (escrowValidatorScript params) Redeem
+redeemEscrow params = redeemEscrowWith (escrowValidatorScript params)
+
+-- | Like 'redeemEscrow' but takes a pre-compiled script.
+redeemEscrowWith
+  :: forall era m
+   . ( C.IsBabbageBasedEra era
+     , C.HasScriptLanguageInEra C.PlutusScriptV3 era
+     )
+  => (MonadBuildTx era m)
+  => C.PlutusScript C.PlutusScriptV3
+  -- ^ Pre-compiled validator script
+  -> C.TxIn
+  -- ^ The escrow UTxO to spend
+  -> m ()
+redeemEscrowWith script txIn =
+  BuildTx.spendPlutusInlineDatum txIn script Redeem
 
 {- | Spend an escrow UTxO with the 'Refund' redeemer and add the contributor's
 key hash as a required signature. The caller is responsible for setting a
@@ -118,6 +155,22 @@ refundEscrow
   -> C.Hash C.PaymentKey
   -- ^ Contributor key hash (must match the inline datum)
   -> m ()
-refundEscrow params txIn contributorKeyHash = do
+refundEscrow params = refundEscrowWith (escrowValidatorScript params)
+
+-- | Like 'refundEscrow' but takes a pre-compiled script.
+refundEscrowWith
+  :: forall era m
+   . ( C.IsBabbageBasedEra era
+     , C.HasScriptLanguageInEra C.PlutusScriptV3 era
+     )
+  => (MonadBuildTx era m)
+  => C.PlutusScript C.PlutusScriptV3
+  -- ^ Pre-compiled validator script
+  -> C.TxIn
+  -- ^ The escrow UTxO to spend
+  -> C.Hash C.PaymentKey
+  -- ^ Contributor key hash (must match the inline datum)
+  -> m ()
+refundEscrowWith script txIn contributorKeyHash = do
   BuildTx.addRequiredSignature contributorKeyHash
-  BuildTx.spendPlutusInlineDatum txIn (escrowValidatorScript params) Refund
+  BuildTx.spendPlutusInlineDatum txIn script Refund
