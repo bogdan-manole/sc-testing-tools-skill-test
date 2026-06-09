@@ -55,3 +55,37 @@ library
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
+
+test-suite auction-test
+  default-language: Haskell2010
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  main-is:          Spec.hs
+  other-modules:    AuctionSpec
+  ghc-options:
+    -Wall -fobject-code -fno-ignore-interface-pragmas
+    -fno-omit-interface-pragmas -fno-specialise -Wno-unused-packages
+
+  build-depends:
+    , aeson
+    , auction
+    , base                      >=4.14.0
+    , bytestring
+    , cardano-api
+    , cardano-ledger-conway
+    , containers
+    , convex-base
+    , convex-coin-selection
+    , convex-mockchain
+    , convex-optics
+    , convex-tasty-streaming
+    , convex-testing-interface
+    , convex-wallet
+    , lens
+    , mtl
+    , plutus-ledger-api
+    , plutus-tx
+    , QuickCheck
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
